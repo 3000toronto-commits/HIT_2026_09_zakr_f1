@@ -1,0 +1,802 @@
+<div class="fd-cf-widget">
+  <div class="fd-cf-header">
+    <h2 class="fd-cf-title">Закрытый факторинг</h2>
+
+    <div class="fd-cf-tabs" role="tablist" aria-label="Закрытый факторинг">
+      <button
+        class="fd-cf-tab fd-cf-tab--active"
+        type="button"
+        role="tab"
+        aria-selected="true"
+        aria-controls="fd-cf-panel-scheme"
+        data-fd-cf-tab="scheme"
+      >
+        Как работает
+      </button>
+
+      <button
+        class="fd-cf-tab"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        aria-controls="fd-cf-panel-notes"
+        data-fd-cf-tab="notes"
+      >
+        Что важно
+      </button>
+    </div>
+  </div>
+
+  <!-- Вкладка: Как работает -->
+  <div
+    class="fd-cf-panel fd-cf-panel--active"
+    id="fd-cf-panel-scheme"
+    role="tabpanel"
+    data-fd-cf-panel="scheme"
+  >
+    <div class="fd-cf-scheme">
+
+      <!-- Покупатель -->
+      <div class="fd-cf-party fd-cf-party--buyer">
+        <div class="fd-cf-icon" aria-hidden="true">
+          <svg viewBox="0 0 80 80">
+            <path d="M14 20h8l7 31h31l7-22H27M32 37h30" />
+            <circle cx="34" cy="61" r="5" />
+            <circle cx="58" cy="61" r="5" />
+          </svg>
+        </div>
+
+        <div class="fd-cf-party-name fd-cf-party-name--small">
+          Покупатель
+        </div>
+
+        <div class="fd-cf-party-note">
+          Дебитор
+        </div>
+      </div>
+
+      <!-- Покупатель ↔ Поставщик -->
+      <div class="fd-cf-flow fd-cf-flow--buyer-supplier">
+
+        <!-- 1. Поставка -->
+        <div class="fd-cf-flow-row">
+          <span class="fd-cf-step">1</span>
+          <span class="fd-cf-flow-text">
+            Поставщик отгружает товар или оказывает услугу
+          </span>
+        </div>
+
+        <!-- Поставщик → Покупатель -->
+        <div class="fd-cf-arrow fd-cf-arrow--left">
+          <span></span>
+        </div>
+
+        <!-- Покупатель → Поставщик -->
+        <div class="fd-cf-arrow fd-cf-arrow--right">
+          <span></span>
+        </div>
+
+        <!-- 3. Оплата -->
+        <div class="fd-cf-flow-row fd-cf-flow-row--bottom">
+          <span class="fd-cf-step">3</span>
+          <span class="fd-cf-flow-text">
+            Покупатель оплачивает поставку напрямую поставщику
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Поставщик -->
+      <div class="fd-cf-party fd-cf-party--supplier">
+        <div class="fd-cf-icon" aria-hidden="true">
+          <svg viewBox="0 0 90 80">
+            <path d="M8 63h75M15 63V30l22 12V30l22 12V24h16v39M21 50h8M37 50h8M53 50h8" />
+            <circle cx="69" cy="65" r="5" />
+            <circle cx="81" cy="65" r="5" />
+          </svg>
+        </div>
+
+        <div class="fd-cf-party-name">
+          Поставщик
+        </div>
+
+        <div class="fd-cf-party-note">
+          Получает деньги раньше срока оплаты покупателем
+        </div>
+      </div>
+
+      <!-- Поставщик ↔ Фактор -->
+      <div class="fd-cf-flow fd-cf-flow--supplier-factor">
+
+        <!-- 2. Финансирование -->
+        <div class="fd-cf-flow-row">
+          <span class="fd-cf-step">2</span>
+          <span class="fd-cf-flow-text">
+            Фактор перечисляет деньги за уступленную дебиторскую задолженность
+          </span>
+        </div>
+
+        <!-- Фактор → Поставщик -->
+        <div class="fd-cf-arrow fd-cf-arrow--left">
+          <span></span>
+        </div>
+
+        <!-- Поставщик → Фактор -->
+        <div class="fd-cf-arrow fd-cf-arrow--right">
+          <span></span>
+        </div>
+
+        <!-- 4. Расчет с фактором -->
+        <div class="fd-cf-flow-row fd-cf-flow-row--bottom">
+          <span class="fd-cf-step">4</span>
+          <span class="fd-cf-flow-text">
+            Поставщик перечисляет фактору деньги, полученные от покупателя
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Фактор -->
+      <div class="fd-cf-party fd-cf-party--factor">
+        <div class="fd-cf-icon" aria-hidden="true">
+          <svg viewBox="0 0 80 80">
+            <path d="M12 30h56M18 30v31M30 30v31M42 30v31M54 30v31M66 30v31M10 63h60M15 25 40 10l25 15" />
+          </svg>
+        </div>
+
+        <div class="fd-cf-party-name fd-cf-party-name--small">
+          Фактор
+        </div>
+
+        <div class="fd-cf-party-note">
+          Финансирует поставщика
+        </div>
+      </div>
+
+    </div>
+
+    <div class="fd-cf-key-note">
+      <div class="fd-cf-eye" aria-hidden="true">
+        <svg viewBox="0 0 48 48">
+          <path d="M5 24s7-11 19-11 19 11 19 11-7 11-19 11S5 24 5 24Z" />
+          <circle cx="24" cy="24" r="5" />
+          <path d="M8 8l32 32" />
+        </svg>
+      </div>
+
+      <div>
+        <strong>Покупатель не участвует в факторинговых отношениях</strong>
+        Для него порядок расчетов с поставщиком не меняется
+      </div>
+    </div>
+  </div>
+
+  <!-- Вкладка: Что важно -->
+  <div
+    class="fd-cf-panel"
+    id="fd-cf-panel-notes"
+    role="tabpanel"
+    hidden
+    data-fd-cf-panel="notes"
+  >
+    <div class="fd-cf-notes-grid">
+
+      <div class="fd-cf-note-card">
+        <div class="fd-cf-note-number">1</div>
+        <h3 class="fd-cf-note-title">Когда использовать</h3>
+        <p class="fd-cf-note-text">
+          Есть надежная дебиторка с длинной отсрочкой, но покупатель не хочет
+          участвовать в факторинговой схеме, подписывать уведомление об уступке
+          или менять привычный порядок расчетов.
+        </p>
+      </div>
+
+      <div class="fd-cf-note-card">
+        <div class="fd-cf-note-number">2</div>
+        <h3 class="fd-cf-note-title">В чем преимущество</h3>
+        <p class="fd-cf-note-text">
+          Поставщик получает деньги раньше срока и сохраняет привычные отношения
+          с покупателем. Классический залог для такого финансирования обычно не нужен.
+        </p>
+      </div>
+
+      <div class="fd-cf-note-card fd-cf-note-card--warning">
+        <div class="fd-cf-note-number">3</div>
+        <h3 class="fd-cf-note-title">Где подвох</h3>
+        <p class="fd-cf-note-text">
+          Закрытая схема сама по себе не означает, что фактор принимает риск
+          неплатежа покупателя. Проверьте в договоре, предусмотрен ли регресс
+          и в каких случаях фактор вправе потребовать деньги у поставщика.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .fd-cf-widget {
+    --fd-cf-dark: #367879;
+    --fd-cf-middle: #CADDDF;
+    --fd-cf-light: #DFF2F3;
+    --fd-cf-orange: #F5811F;
+    --fd-cf-text: #243334;
+    --fd-cf-white: #ffffff;
+
+    width: 100%;
+    max-width: 757px;
+    min-height: 600px;
+    margin: 0 auto;
+    padding: 26px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--fd-cf-text);
+    background: var(--fd-cf-white);
+    border: 1px solid var(--fd-cf-middle);
+    border-radius: 20px;
+  }
+
+  .fd-cf-widget *,
+  .fd-cf-widget *::before,
+  .fd-cf-widget *::after {
+    box-sizing: border-box;
+  }
+
+  .fd-cf-widget .fd-cf-header {
+    margin-bottom: 24px;
+  }
+
+  .fd-cf-widget .fd-cf-title {
+    margin: 0 0 18px;
+    padding: 0;
+    color: var(--fd-cf-dark);
+    font-size: 34px;
+    line-height: 1.08;
+    font-weight: 700;
+  }
+
+  /* Вкладки */
+
+  .fd-cf-widget .fd-cf-tabs {
+    display: flex;
+    gap: 8px;
+    padding: 5px;
+    background: var(--fd-cf-light);
+    border-radius: 14px;
+  }
+
+  .fd-cf-widget .fd-cf-tab {
+    flex: 1 1 0;
+    min-height: 43px;
+    margin: 0;
+    padding: 9px 16px;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--fd-cf-dark);
+    font-family: inherit;
+    font-size: 17px;
+    line-height: 1.2;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .fd-cf-widget .fd-cf-tab:hover {
+    background: rgba(54, 120, 121, 0.08);
+  }
+
+  .fd-cf-widget .fd-cf-tab--active {
+    color: var(--fd-cf-white);
+    background: var(--fd-cf-dark);
+    box-shadow: 0 3px 8px rgba(54, 120, 121, 0.18);
+  }
+
+  .fd-cf-widget .fd-cf-tab:focus-visible {
+    outline: 3px solid rgba(245, 129, 31, 0.45);
+    outline-offset: 2px;
+  }
+
+  .fd-cf-widget .fd-cf-panel {
+    display: none;
+  }
+
+  .fd-cf-widget .fd-cf-panel--active {
+    display: block;
+  }
+
+  /* Схема */
+
+  .fd-cf-widget .fd-cf-scheme {
+    display: grid;
+    grid-template-columns:
+      minmax(118px, 1fr)
+      minmax(125px, 1.1fr)
+      minmax(145px, 1.18fr)
+      minmax(125px, 1.1fr)
+      minmax(118px, 1fr);
+    gap: 10px;
+    align-items: center;
+    min-height: 340px;
+  }
+
+  .fd-cf-widget .fd-cf-party {
+    min-width: 0;
+    min-height: 235px;
+    padding: 18px 10px;
+    border: 1.5px solid var(--fd-cf-middle);
+    border-radius: 18px;
+    background: var(--fd-cf-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .fd-cf-widget .fd-cf-party--supplier {
+    min-height: 270px;
+    border: 2px solid var(--fd-cf-dark);
+    background: var(--fd-cf-middle);
+  }
+
+  .fd-cf-widget .fd-cf-icon {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 16px;
+    color: var(--fd-cf-dark);
+  }
+
+  .fd-cf-widget .fd-cf-icon svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .fd-cf-widget .fd-cf-party-name {
+    max-width: 100%;
+    color: var(--fd-cf-dark);
+    font-size: 20px;
+    line-height: 1.1;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .fd-cf-widget .fd-cf-party-name--small {
+    font-size: 15px;
+    white-space: nowrap;
+    letter-spacing: -0.2px;
+  }
+
+  .fd-cf-widget .fd-cf-party-note {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  /* Потоки */
+
+  .fd-cf-widget .fd-cf-flow {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .fd-cf-widget .fd-cf-flow-row {
+    min-height: 82px;
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    font-size: 14px;
+    line-height: 1.25;
+  }
+
+  .fd-cf-widget .fd-cf-flow-row--bottom {
+    margin-top: 5px;
+  }
+
+  .fd-cf-widget .fd-cf-step {
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--fd-cf-orange);
+    color: var(--fd-cf-white);
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .fd-cf-widget .fd-cf-flow-text {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  /* Стрелки */
+
+  .fd-cf-widget .fd-cf-arrow {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    margin: 2px 0;
+  }
+
+  .fd-cf-widget .fd-cf-arrow span {
+    position: absolute;
+    top: 9px;
+    left: 4px;
+    right: 4px;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--fd-cf-dark);
+  }
+
+  .fd-cf-widget .fd-cf-arrow--right span::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -1px;
+    width: 11px;
+    height: 11px;
+    border-top: 3px solid var(--fd-cf-dark);
+    border-right: 3px solid var(--fd-cf-dark);
+    transform: rotate(45deg);
+  }
+
+  .fd-cf-widget .fd-cf-arrow--left span::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -1px;
+    width: 11px;
+    height: 11px;
+    border-left: 3px solid var(--fd-cf-dark);
+    border-bottom: 3px solid var(--fd-cf-dark);
+    transform: rotate(45deg);
+  }
+
+  /* Плашка */
+
+  .fd-cf-widget .fd-cf-key-note {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 18px;
+    padding: 16px 18px;
+    border-radius: 15px;
+    background: var(--fd-cf-light);
+    color: var(--fd-cf-dark);
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .fd-cf-widget .fd-cf-key-note strong {
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .fd-cf-widget .fd-cf-eye {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .fd-cf-widget .fd-cf-eye svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: var(--fd-cf-dark);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Вкладка "Что важно" */
+
+  .fd-cf-widget .fd-cf-notes-grid {
+    display: grid;
+    gap: 14px;
+  }
+
+  .fd-cf-widget .fd-cf-note-card {
+    position: relative;
+    padding: 20px 22px 20px 62px;
+    border: 1px solid var(--fd-cf-middle);
+    border-radius: 16px;
+    background: var(--fd-cf-light);
+  }
+
+  .fd-cf-widget .fd-cf-note-card--warning {
+    border-left: 5px solid var(--fd-cf-orange);
+    background: #fff8f2;
+  }
+
+  .fd-cf-widget .fd-cf-note-number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--fd-cf-orange);
+    color: var(--fd-cf-white);
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .fd-cf-widget .fd-cf-note-title {
+    margin: 0 0 8px;
+    padding: 0;
+    color: var(--fd-cf-dark);
+    font-size: 20px;
+    line-height: 1.15;
+  }
+
+  .fd-cf-widget .fd-cf-note-text {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.42;
+  }
+
+  /* Планшет */
+
+  @media (max-width: 680px) {
+    .fd-cf-widget {
+      min-height: 0;
+      padding: 22px;
+    }
+
+    .fd-cf-widget .fd-cf-scheme {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+        "buyer supplier factor"
+        "flow1 flow1 flow1"
+        "flow2 flow2 flow2";
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .fd-cf-widget .fd-cf-party {
+      min-height: 190px;
+    }
+
+    .fd-cf-widget .fd-cf-party--buyer {
+      grid-area: buyer;
+    }
+
+    .fd-cf-widget .fd-cf-party--supplier {
+      grid-area: supplier;
+      min-height: 190px;
+    }
+
+    .fd-cf-widget .fd-cf-party--factor {
+      grid-area: factor;
+    }
+
+    .fd-cf-widget .fd-cf-flow--buyer-supplier {
+      grid-area: flow1;
+    }
+
+    .fd-cf-widget .fd-cf-flow--supplier-factor {
+      grid-area: flow2;
+    }
+
+    .fd-cf-widget .fd-cf-flow {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+      padding: 12px 0;
+    }
+
+    .fd-cf-widget .fd-cf-flow-row {
+      min-height: 0;
+      align-items: center;
+      padding: 6px 0;
+    }
+
+    .fd-cf-widget .fd-cf-arrow {
+      display: none;
+    }
+
+    .fd-cf-widget .fd-cf-flow--buyer-supplier::before {
+      content: "Покупатель ↔ Поставщик";
+      color: var(--fd-cf-dark);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .fd-cf-widget .fd-cf-flow--supplier-factor::before {
+      content: "Поставщик ↔ Фактор";
+      color: var(--fd-cf-dark);
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+
+  /* Мобильный */
+
+  @media (max-width: 480px) {
+    .fd-cf-widget {
+      padding: 18px;
+      border-radius: 16px;
+    }
+
+    .fd-cf-widget .fd-cf-title {
+      font-size: 28px;
+    }
+
+    .fd-cf-widget .fd-cf-tabs {
+      flex-direction: column;
+    }
+
+    .fd-cf-widget .fd-cf-scheme {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .fd-cf-widget .fd-cf-party {
+      width: 100%;
+      min-height: 0;
+      padding: 20px;
+    }
+
+    .fd-cf-widget .fd-cf-party--buyer {
+      order: 1;
+    }
+
+    .fd-cf-widget .fd-cf-flow--buyer-supplier {
+      order: 2;
+    }
+
+    .fd-cf-widget .fd-cf-party--supplier {
+      order: 3;
+    }
+
+    .fd-cf-widget .fd-cf-flow--supplier-factor {
+      order: 4;
+    }
+
+    .fd-cf-widget .fd-cf-party--factor {
+      order: 5;
+    }
+
+    .fd-cf-widget .fd-cf-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .fd-cf-widget .fd-cf-party-name {
+      font-size: 19px;
+    }
+
+    .fd-cf-widget .fd-cf-party-name--small {
+      font-size: 17px;
+    }
+
+    .fd-cf-widget .fd-cf-flow {
+      padding: 14px;
+      border-radius: 14px;
+      background: #f6fbfb;
+    }
+
+    .fd-cf-widget .fd-cf-flow-row {
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .fd-cf-widget .fd-cf-key-note {
+      align-items: flex-start;
+      font-size: 15px;
+    }
+
+    .fd-cf-widget .fd-cf-note-card {
+      padding: 54px 18px 18px;
+    }
+
+    .fd-cf-widget .fd-cf-note-number {
+      top: 16px;
+      left: 18px;
+    }
+  }
+
+  @media (max-width: 340px) {
+    .fd-cf-widget {
+      padding: 14px;
+    }
+
+    .fd-cf-widget .fd-cf-title {
+      font-size: 25px;
+    }
+
+    .fd-cf-widget .fd-cf-tab {
+      font-size: 16px;
+    }
+
+    .fd-cf-widget .fd-cf-party-name--small {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    "use strict";
+
+    function initClosedFactoringWidget(widget) {
+      var tabs = widget.querySelectorAll("[data-fd-cf-tab]");
+      var panels = widget.querySelectorAll("[data-fd-cf-panel]");
+
+      function activateTab(tab) {
+        var target = tab.getAttribute("data-fd-cf-tab");
+
+        tabs.forEach(function (item) {
+          var isActive = item === tab;
+
+          item.classList.toggle("fd-cf-tab--active", isActive);
+          item.setAttribute("aria-selected", String(isActive));
+          item.setAttribute("tabindex", isActive ? "0" : "-1");
+        });
+
+        panels.forEach(function (panel) {
+          var isActive =
+            panel.getAttribute("data-fd-cf-panel") === target;
+
+          panel.classList.toggle("fd-cf-panel--active", isActive);
+          panel.hidden = !isActive;
+        });
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          activateTab(tab);
+        });
+
+        tab.addEventListener("keydown", function (event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            activateTab(tab);
+          }
+
+          if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+            event.preventDefault();
+
+            var currentIndex = Array.prototype.indexOf.call(tabs, tab);
+            var direction = event.key === "ArrowRight" ? 1 : -1;
+            var nextIndex =
+              (currentIndex + direction + tabs.length) % tabs.length;
+
+            tabs[nextIndex].focus();
+            activateTab(tabs[nextIndex]);
+          }
+        });
+      });
+    }
+
+    document
+      .querySelectorAll(".fd-cf-widget")
+      .forEach(initClosedFactoringWidget);
+  })();
+</script>
