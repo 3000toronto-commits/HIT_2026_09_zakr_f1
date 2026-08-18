@@ -302,6 +302,7 @@
 
   .fd-cf-widget .fd-cf-panel {
     display: none;
+    height: var(--fd-cf-panel-height, auto);
   }
 
   .fd-cf-widget .fd-cf-panel--active {
@@ -749,22 +750,60 @@
       var tabs = widget.querySelectorAll("[data-fd-cf-tab]");
       var panels = widget.querySelectorAll("[data-fd-cf-panel]");
 
+      var schemePanel =
+        widget.querySelector('[data-fd-cf-panel="scheme"]');
+
+      /*
+        Первая вкладка «Как работает» — эталон.
+        Измеряем ее естественную высоту
+        и задаем такую же обеим вкладкам.
+      */
+      function equalizePanelHeights() {
+        if (!schemePanel) return;
+
+        widget.style.removeProperty("--fd-cf-panel-height");
+
+        var schemeHeight =
+          Math.ceil(schemePanel.scrollHeight);
+
+        widget.style.setProperty(
+          "--fd-cf-panel-height",
+          schemeHeight + "px"
+        );
+      }
+
       function activateTab(tab) {
-        var target = tab.getAttribute("data-fd-cf-tab");
+        var target =
+          tab.getAttribute("data-fd-cf-tab");
 
         tabs.forEach(function (item) {
           var isActive = item === tab;
 
-          item.classList.toggle("fd-cf-tab--active", isActive);
-          item.setAttribute("aria-selected", String(isActive));
-          item.setAttribute("tabindex", isActive ? "0" : "-1");
+          item.classList.toggle(
+            "fd-cf-tab--active",
+            isActive
+          );
+
+          item.setAttribute(
+            "aria-selected",
+            String(isActive)
+          );
+
+          item.setAttribute(
+            "tabindex",
+            isActive ? "0" : "-1"
+          );
         });
 
         panels.forEach(function (panel) {
           var isActive =
             panel.getAttribute("data-fd-cf-panel") === target;
 
-          panel.classList.toggle("fd-cf-panel--active", isActive);
+          panel.classList.toggle(
+            "fd-cf-panel--active",
+            isActive
+          );
+
           panel.hidden = !isActive;
         });
       }
@@ -775,24 +814,61 @@
         });
 
         tab.addEventListener("keydown", function (event) {
-          if (event.key === "Enter" || event.key === " ") {
+          if (
+            event.key === "Enter" ||
+            event.key === " "
+          ) {
             event.preventDefault();
             activateTab(tab);
           }
 
-          if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+          if (
+            event.key === "ArrowRight" ||
+            event.key === "ArrowLeft"
+          ) {
             event.preventDefault();
 
-            var currentIndex = Array.prototype.indexOf.call(tabs, tab);
-            var direction = event.key === "ArrowRight" ? 1 : -1;
+            var currentIndex =
+              Array.prototype.indexOf.call(
+                tabs,
+                tab
+              );
+
+            var direction =
+              event.key === "ArrowRight"
+                ? 1
+                : -1;
+
             var nextIndex =
-              (currentIndex + direction + tabs.length) % tabs.length;
+              (
+                currentIndex +
+                direction +
+                tabs.length
+              ) % tabs.length;
 
             tabs[nextIndex].focus();
             activateTab(tabs[nextIndex]);
           }
         });
       });
+
+      /* Первичный расчет */
+      equalizePanelHeights();
+
+      /* Пересчет при изменении ширины окна */
+      var resizeTimer;
+
+      window.addEventListener(
+        "resize",
+        function () {
+          clearTimeout(resizeTimer);
+
+          resizeTimer = setTimeout(
+            equalizePanelHeights,
+            120
+          );
+        }
+      );
     }
 
     document
