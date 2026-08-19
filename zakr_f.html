@@ -561,35 +561,37 @@
   /* Кружки + и − */
 
   .fd-cf-widget .fd-cf-note-sign {
-    position: absolute;
-    top: 14px;
-    left: 20px;
+  position: absolute;
+  top: 14px;
+  left: 20px;
 
-    width: 28px;
-    height: 28px;
+  width: 28px;
+  height: 28px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background: var(--fd-cf-orange);
-    color: var(--fd-cf-white);
+  background: var(--fd-cf-orange);
+  color: var(--fd-cf-white);
 
-    font-size: 20px;
-    line-height: 1;
-    font-weight: 700;
-  }
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
 
-  .fd-cf-widget .fd-cf-note-sign--plus {
-    padding-bottom: 1px;
-  }
+  padding: 0;
+}
 
-  .fd-cf-widget .fd-cf-note-sign--minus {
-    padding-bottom: 3px;
-  }
+.fd-cf-widget .fd-cf-note-sign--plus {
+  transform: translateY(1px);
+}
 
+.fd-cf-widget .fd-cf-note-sign--minus {
+  transform: translateY(1px);
+}
+  
   .fd-cf-widget .fd-cf-note-title {
     margin: 0 0 8px;
     padding: 0;
