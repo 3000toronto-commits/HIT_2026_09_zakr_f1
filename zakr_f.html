@@ -181,10 +181,8 @@
   >
     <div class="fd-cf-notes-grid">
 
-      <!-- 1. Без значка -->
+      <!-- Когда использовать — без повторного заголовка -->
       <div class="fd-cf-note-card">
-
-
         <p class="fd-cf-note-text">
           Есть надежная дебиторка с длинной отсрочкой, но покупатель не хочет
           участвовать в факторинговой схеме, подписывать уведомление об уступке
@@ -192,7 +190,7 @@
         </p>
       </div>
 
-      <!-- 2. Плюс -->
+      <!-- Плюс -->
       <div class="fd-cf-note-card fd-cf-note-card--with-sign">
 
         <div
@@ -212,7 +210,7 @@
         </p>
       </div>
 
-      <!-- 3. Минус -->
+      <!-- Минус -->
       <div
         class="fd-cf-note-card fd-cf-note-card--with-sign fd-cf-note-card--warning"
       >
@@ -305,7 +303,6 @@
     line-height: 1.2;
     font-weight: 700;
     cursor: pointer;
-
     transition:
       background-color 0.2s ease,
       color 0.2s ease,
@@ -342,14 +339,12 @@
 
   .fd-cf-widget .fd-cf-scheme {
     display: grid;
-
     grid-template-columns:
       minmax(118px, 1fr)
       minmax(125px, 1.1fr)
       minmax(145px, 1.18fr)
       minmax(125px, 1.1fr)
       minmax(118px, 1fr);
-
     gap: 10px;
     align-items: center;
     min-height: 300px;
@@ -359,26 +354,20 @@
     min-width: 0;
     min-height: 235px;
     padding: 18px 10px;
-
     border: 1.5px solid var(--fd-cf-middle);
     border-radius: 18px;
-
     background: var(--fd-cf-light);
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     text-align: center;
     overflow: hidden;
   }
 
   .fd-cf-widget .fd-cf-party--supplier {
     min-height: 270px;
-
     border: 2px solid var(--fd-cf-dark);
-
     background: var(--fd-cf-middle);
   }
 
@@ -393,9 +382,7 @@
     display: block;
     width: 100%;
     height: 100%;
-
     fill: none;
-
     stroke: currentColor;
     stroke-width: 3;
     stroke-linecap: round;
@@ -404,13 +391,10 @@
 
   .fd-cf-widget .fd-cf-party-name {
     max-width: 100%;
-
     color: var(--fd-cf-dark);
-
     font-size: 20px;
     line-height: 1.1;
     font-weight: 700;
-
     text-transform: uppercase;
     text-align: center;
   }
@@ -423,7 +407,6 @@
 
   .fd-cf-widget .fd-cf-party-note {
     margin-top: 8px;
-
     font-size: 14px;
     line-height: 1.3;
   }
@@ -432,21 +415,17 @@
 
   .fd-cf-widget .fd-cf-flow {
     align-self: stretch;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     min-width: 0;
   }
 
   .fd-cf-widget .fd-cf-flow-row {
     min-height: 82px;
-
     display: flex;
     align-items: flex-start;
     gap: 7px;
-
     font-size: 14px;
     line-height: 1.25;
   }
@@ -457,19 +436,14 @@
 
   .fd-cf-widget .fd-cf-step {
     flex: 0 0 30px;
-
     width: 30px;
     height: 30px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
-
     background: var(--fd-cf-orange);
     color: var(--fd-cf-white);
-
     font-size: 16px;
     line-height: 1;
     font-weight: 700;
@@ -484,76 +458,56 @@
 
   .fd-cf-widget .fd-cf-arrow {
     position: relative;
-
     width: 100%;
     height: 20px;
-
     margin: 2px 0;
   }
 
   .fd-cf-widget .fd-cf-arrow span {
     position: absolute;
-
     top: 9px;
     left: 4px;
     right: 4px;
-
     height: 3px;
-
     border-radius: 3px;
-
     background: var(--fd-cf-dark);
   }
 
   .fd-cf-widget .fd-cf-arrow--right span::after {
     content: "";
-
     position: absolute;
-
     top: -5px;
     right: -1px;
-
     width: 11px;
     height: 11px;
-
     border-top: 3px solid var(--fd-cf-dark);
     border-right: 3px solid var(--fd-cf-dark);
-
     transform: rotate(45deg);
   }
 
   .fd-cf-widget .fd-cf-arrow--left span::before {
     content: "";
-
     position: absolute;
-
     top: -5px;
     left: -1px;
-
     width: 11px;
     height: 11px;
-
     border-left: 3px solid var(--fd-cf-dark);
     border-bottom: 3px solid var(--fd-cf-dark);
-
     transform: rotate(45deg);
   }
 
-  /* Нижняя плашка первой вкладки */
+  /* Плашка первой вкладки */
 
   .fd-cf-widget .fd-cf-key-note {
     display: flex;
     align-items: center;
     gap: 14px;
-
     margin-top: 18px;
     padding: 16px 18px;
-
     border-radius: 15px;
-
     background: var(--fd-cf-light);
     color: var(--fd-cf-dark);
-
     font-size: 15px;
     line-height: 1.35;
   }
@@ -573,9 +527,7 @@
     display: block;
     width: 100%;
     height: 100%;
-
     fill: none;
-
     stroke: var(--fd-cf-dark);
     stroke-width: 2.5;
     stroke-linecap: round;
@@ -591,12 +543,9 @@
 
   .fd-cf-widget .fd-cf-note-card {
     position: relative;
-
     padding: 14px 22px;
-
     border: 1px solid var(--fd-cf-middle);
     border-radius: 16px;
-
     background: var(--fd-cf-light);
   }
 
@@ -609,35 +558,42 @@
     background: #fff8f2;
   }
 
-  /* Плюс и минус */
+  /* Кружки + и − */
 
   .fd-cf-widget .fd-cf-note-sign {
     position: absolute;
-
+    top: 14px;
     left: 20px;
 
-    color: var(--fd-cf-orange);
+    width: 28px;
+    height: 28px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--fd-cf-orange);
+    color: var(--fd-cf-white);
+
+    font-size: 20px;
     line-height: 1;
     font-weight: 700;
   }
 
   .fd-cf-widget .fd-cf-note-sign--plus {
-    top: 10px;
-    font-size: 30px;
+    padding-bottom: 1px;
   }
 
   .fd-cf-widget .fd-cf-note-sign--minus {
-    top: 4px;
-    font-size: 36px;
+    padding-bottom: 3px;
   }
 
   .fd-cf-widget .fd-cf-note-title {
     margin: 0 0 8px;
     padding: 0;
-
     color: var(--fd-cf-dark);
-
     font-size: 20px;
     line-height: 1.15;
   }
@@ -645,7 +601,6 @@
   .fd-cf-widget .fd-cf-note-text {
     margin: 0;
     padding: 0;
-
     font-size: 16px;
     line-height: 1.42;
   }
@@ -660,12 +615,10 @@
 
     .fd-cf-widget .fd-cf-scheme {
       grid-template-columns: 1fr 1fr 1fr;
-
       grid-template-areas:
         "buyer supplier factor"
         "flow1 flow1 flow1"
         "flow2 flow2 flow2";
-
       gap: 14px;
       align-items: stretch;
     }
@@ -697,19 +650,14 @@
 
     .fd-cf-widget .fd-cf-flow {
       display: grid;
-
       grid-template-columns: 1fr;
-
       gap: 4px;
-
       padding: 12px 0;
     }
 
     .fd-cf-widget .fd-cf-flow-row {
       min-height: 0;
-
       align-items: center;
-
       padding: 6px 0;
     }
 
@@ -719,18 +667,14 @@
 
     .fd-cf-widget .fd-cf-flow--buyer-supplier::before {
       content: "Покупатель ↔ Поставщик";
-
       color: var(--fd-cf-dark);
-
       font-size: 16px;
       font-weight: 700;
     }
 
     .fd-cf-widget .fd-cf-flow--supplier-factor::before {
       content: "Поставщик ↔ Фактор";
-
       color: var(--fd-cf-dark);
-
       font-size: 16px;
       font-weight: 700;
     }
@@ -741,7 +685,6 @@
   @media (max-width: 480px) {
     .fd-cf-widget {
       padding: 18px;
-
       border-radius: 16px;
     }
 
@@ -756,14 +699,12 @@
     .fd-cf-widget .fd-cf-scheme {
       display: flex;
       flex-direction: column;
-
       gap: 14px;
     }
 
     .fd-cf-widget .fd-cf-party {
       width: 100%;
       min-height: 0;
-
       padding: 20px;
     }
 
@@ -790,7 +731,6 @@
     .fd-cf-widget .fd-cf-icon {
       width: 60px;
       height: 60px;
-
       margin-bottom: 10px;
     }
 
@@ -804,9 +744,7 @@
 
     .fd-cf-widget .fd-cf-flow {
       padding: 14px;
-
       border-radius: 14px;
-
       background: #f6fbfb;
     }
 
@@ -817,7 +755,6 @@
 
     .fd-cf-widget .fd-cf-key-note {
       align-items: flex-start;
-
       font-size: 15px;
     }
 
@@ -830,15 +767,8 @@
     }
 
     .fd-cf-widget .fd-cf-note-sign {
+      top: 14px;
       left: 17px;
-    }
-
-    .fd-cf-widget .fd-cf-note-sign--plus {
-      top: 9px;
-    }
-
-    .fd-cf-widget .fd-cf-note-sign--minus {
-      top: 3px;
     }
   }
 
@@ -950,7 +880,6 @@
               event.key === " "
             ) {
               event.preventDefault();
-
               activateTab(tab);
             }
 
