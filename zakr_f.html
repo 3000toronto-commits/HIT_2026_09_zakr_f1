@@ -22,7 +22,7 @@
         aria-controls="fd-cf-panel-notes"
         data-fd-cf-tab="notes"
       >
-        Что важно
+        Когда использовать
       </button>
     </div>
   </div>
@@ -171,47 +171,59 @@
     </div>
   </div>
 
-  <!-- Вкладка: Что важно -->
-  <div
-    class="fd-cf-panel"
-    id="fd-cf-panel-notes"
-    role="tabpanel"
-    hidden
-    data-fd-cf-panel="notes"
-  >
-    <div class="fd-cf-notes-grid">
+  <!-- Вкладка: Когда использовать -->
+  <div class="fd-rf-notes-grid">
 
-      <div class="fd-cf-note-card">
-        <div class="fd-cf-note-number">1</div>
-        <h3 class="fd-cf-note-title">Когда использовать</h3>
-        <p class="fd-cf-note-text">
-          Есть надежная дебиторка с&nbsp;длинной отсрочкой, но&nbsp;покупатель не&nbsp;хочет
-          участвовать в&nbsp;факторинговой схеме, подписывать уведомление об&nbsp;уступке
-          или менять привычный порядок расчетов
-        </p>
-      </div>
+  <div class="fd-rf-note-card">
+    <h3 class="fd-rf-note-title">
+      Когда использовать
+    </h3>
 
-      <div class="fd-cf-note-card">
-        <div class="fd-cf-note-number">2</div>
-        <h3 class="fd-cf-note-title">В чем преимущество</h3>
-        <p class="fd-cf-note-text">
-          Поставщик получает деньги раньше срока и&nbsp;сохраняет привычные отношения
-          с&nbsp;покупателем. Классический залог для такого финансирования не&nbsp;нужен
-        </p>
-      </div>
-
-      <div class="fd-cf-note-card fd-cf-note-card--warning">
-        <div class="fd-cf-note-number">3</div>
-        <h3 class="fd-cf-note-title">Где подвох</h3>
-        <p class="fd-cf-note-text">
-          Закрытая схема сама по&nbsp;себе не&nbsp;означает, что фактор принимает риск
-          неплатежа покупателя. Проверьте в&nbsp;договоре, предусмотрен&nbsp;ли регресс
-          и&nbsp;в&nbsp;каких случаях фактор вправе потребовать деньги у&nbsp;поставщика
-        </p>
-      </div>
-
-    </div>
+    <p class="fd-rf-note-text">
+      Есть надежные покупатели и длинная отсрочка платежа, а компании
+      нужно быстрее вернуть деньги в оборот. Инструмент подойдет, если
+      поставщик готов оставить риск неплатежа покупателя на себе
+    </p>
   </div>
+
+
+  <div class="fd-rf-note-card">
+
+    <div class="fd-rf-note-sign fd-rf-note-sign--plus">
+      +
+    </div>
+
+    <h3 class="fd-rf-note-title">
+      В чем преимущество
+    </h3>
+
+    <p class="fd-rf-note-text">
+      Компания получает деньги сразу после поставки и не ждет окончания
+      отсрочки. Поскольку фактор не принимает на себя весь риск неплатежа,
+      регрессный факторинг обычно дешевле безрегрессного
+    </p>
+
+  </div>
+
+
+  <div class="fd-rf-note-card fd-rf-note-card--warning">
+
+    <div class="fd-rf-note-sign fd-rf-note-sign--minus">
+      −
+    </div>
+
+    <h3 class="fd-rf-note-title">
+      Где подвох
+    </h3>
+
+    <p class="fd-rf-note-text">
+      Если покупатель не заплатит, поставщику может потребоваться быстро
+      вернуть фактору уже полученные деньги. Проверьте основания для
+      регресса, срок возврата и дополнительные комиссии
+    </p>
+
+  </div>
+
 </div>
 
 <style>
@@ -527,22 +539,26 @@
     background: #fff8f2;
   }
 
-  .fd-cf-widget .fd-cf-note-number {
-    position: absolute;
-    top: 14px;
-    left: 20px;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--fd-cf-orange);
-    color: var(--fd-cf-white);
-    font-size: 15px;
-    line-height: 1;
-    font-weight: 700;
-  }
+  .fd-rf-widget .fd-rf-note-sign {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+
+  color: var(--fd-rf-orange);
+
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.fd-rf-widget .fd-rf-note-sign--plus {
+  font-size: 30px;
+}
+
+.fd-rf-widget .fd-rf-note-sign--minus {
+  font-size: 34px;
+  top: 8px;
+}
 
   .fd-cf-widget .fd-cf-note-title {
     margin: 0 0 8px;
